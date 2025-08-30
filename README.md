@@ -101,7 +101,7 @@ TEST/
 
 ## ⚙️ Instalación y uso
 
-# 1. Clonar repositorio
+### 1. Clonar repositorio
 git clone https://github.com/usuario/LLM_Guard_Extension.git
 cd LLM_Guard_Extension
 
@@ -140,18 +140,6 @@ Cada subcarpeta contiene:
   - *Zero-shot (ZS)*  
   - *Zero-shot enriquecido (ZS_enriquecido)*  
   - *Few-shot (FS)*  
-
-Los resultados permiten comparar la precisión, exhaustividad y consistencia entre modelos, aportando una visión clara sobre sus capacidades para detectar PII (*Personally Identifiable Information*).  
-
-### 📑 Tabla comparativa de modelos evaluados
-
-| Modelo                        | Proveedor   | Tamaño aprox. | Configuraciones probadas         |
-|-------------------------------|-------------|---------------|----------------------------------|
-| GPT-4o-mini                   | OpenAI      | ~Mini (desconocido) | ZS, ZS enriquecido, FS |
-| Gemini 1.5 Pro                | Google DeepMind | ~Proprietary | ZS, ZS enriquecido, FS |
-| gpt-oss-120B                  | OpenAI/Groq | 120B          | ZS, ZS enriquecido, FS |
-| LLaMA 4 Scout 17B 16E Instruct| Meta        | 17B           | ZS, ZS enriquecido, FS |
-| Claude-3 Haiku                | Anthropic   | ~Small         | ZS, ZS enriquecido, FS |
 
 ---
 
