@@ -46,10 +46,6 @@ El proyecto se compone de dos módulos principales:
 
 ## 📂 Estructura del repositorio
 
-### 📂 `LLM_Guard_Extension/`
-
-Contiene la implementación de la extensión y el backend.
-
 ```text
 LLM_Guard_Extension/
 ├── FastAPI.py
