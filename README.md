@@ -105,17 +105,17 @@ TEST/
 git clone https://github.com/usuario/LLM_Guard_Extension.git
 cd LLM_Guard_Extension
 
-# 2. Instalar dependencias del backend
+### 2. Instalar dependencias del backend
 pip install -r requirements.txt
 
-# 3. Configurar la clave de API (Groq u otros proveedores)
+### 3. Configurar la clave de API (Groq u otros proveedores)
 export GROQ_API_KEY="tu_api_key_aqui"   # Linux / macOS
 setx GROQ_API_KEY "tu_api_key_aqui"     # Windows PowerShell
 
-# 4. Ejecutar servidor
+### 4. Ejecutar servidor
 uvicorn server.app:app --host 127.0.0.1 --port 8000 --reload
 
-# 5. Cargar extensión en Chrome/Edge/Brave
+### 5. Cargar extensión en Chrome/Edge/Brave
 1. Ir a chrome://extensions/
 2. Activar "Modo desarrollador"
 3. Cargar extensión desempaquetada → seleccionar carpeta LLM_Guard_Extension/extension/
