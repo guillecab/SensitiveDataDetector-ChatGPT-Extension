@@ -100,3 +100,75 @@ TEST/
     ├── pii_detection_sample_llama4_scout_ZS_1000.json
     └── pii_detection_sample_llama4_scout_ZS_enriquecido_1000.json
 
+
+---
+
+## ⚙️ Instalación y uso
+
+# 1. Clonar repositorio
+git clone https://github.com/usuario/LLM_Guard_Extension.git
+cd LLM_Guard_Extension
+
+# 2. Instalar dependencias del backend
+pip install -r requirements.txt
+
+# 3. Configurar la clave de API (Groq u otros proveedores)
+export GROQ_API_KEY="tu_api_key_aqui"   # Linux / macOS
+setx GROQ_API_KEY "tu_api_key_aqui"     # Windows PowerShell
+
+# 4. Ejecutar servidor
+uvicorn server.app:app --host 127.0.0.1 --port 8000 --reload
+
+# 5. Cargar extensión en Chrome/Edge/Brave
+1. Ir a chrome://extensions/
+2. Activar "Modo desarrollador"
+3. Cargar extensión desempaquetada → seleccionar carpeta LLM_Guard_Extension/extension/
+4. Abrir ChatGPT y comenzar a usar
+
+
+---
+
+## 📊 Evaluación de modelos
+
+La carpeta `TEST/` incluye scripts y resultados de los experimentos realizados para comparar cinco modelos de lenguaje en la tarea de detección de información sensible:  
+
+- **GPT-4o-mini**  
+- **Gemini 1.5 Pro**  
+- **OpenAI/gpt-oss-120B**  
+- **LLaMA 4 Scout 17B 16E Instruct**  
+- **Claude-3 Haiku**  
+
+Cada subcarpeta contiene:  
+- Script `.py` para interactuar con el modelo.  
+- Archivos `.json` con los resultados en diferentes configuraciones de prompting:  
+  - *Zero-shot (ZS)*  
+  - *Zero-shot enriquecido (ZS_enriquecido)*  
+  - *Few-shot (FS)*  
+
+Los resultados permiten comparar la precisión, exhaustividad y consistencia entre modelos, aportando una visión clara sobre sus capacidades para detectar PII (*Personally Identifiable Information*).  
+
+### 📑 Tabla comparativa de modelos evaluados
+
+| Modelo                        | Proveedor   | Tamaño aprox. | Configuraciones probadas         |
+|-------------------------------|-------------|---------------|----------------------------------|
+| GPT-4o-mini                   | OpenAI      | ~Mini (desconocido) | ZS, ZS enriquecido, FS |
+| Gemini 1.5 Pro                | Google DeepMind | ~Proprietary | ZS, ZS enriquecido, FS |
+| gpt-oss-120B                  | OpenAI/Groq | 120B          | ZS, ZS enriquecido, FS |
+| LLaMA 4 Scout 17B 16E Instruct| Meta        | 17B           | ZS, ZS enriquecido, FS |
+| Claude-3 Haiku                | Anthropic   | ~Small         | ZS, ZS enriquecido, FS |
+
+---
+
+## 📜 Licencia
+
+Este proyecto se distribuye bajo licencia MIT.  
+Consulta el archivo `LICENSE` para más detalles.  
+
+---
+
+## 📚 Referencias
+
+- FastAPI Documentation: [https://fastapi.tiangolo.com](https://fastapi.tiangolo.com)  
+- OpenAI Privacy Policy: [https://openai.com/es-ES/policies/row-privacy-policy/](https://openai.com/es-ES/policies/row-privacy-policy/)  
+- Código de esta extensión: disponible en este repositorio de GitHub.  
+
